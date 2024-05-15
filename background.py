@@ -15,7 +15,7 @@ def __get_spool_list():
     IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de número de tentativas)
 
     Returns:
-        object: contendo o número e nome (título) das ordens spool [Exemplo: {56699555: 27_09_2023_ZIM100}]
+        object: contendo o número e nome (título) das ordens spool [Exemplo: {56699555: 09_2023_IW67}]
     """
 
     while True:
@@ -305,7 +305,7 @@ def __is_all_job_concluded():
 def export_files():
     """  
     Este método realiza a conferência e exportação dos dados das ordens spool do usuário [SP02]
-    IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de númeto de tentativas)
+    IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de número de tentativas)
 
     Returns:
         bool: True se executado com sucesso
@@ -325,7 +325,7 @@ def export_files():
 def remove_trash():
     """  
     Este método realiza a remoção de jobs, ordens spools e arquivos exportados em preparação para execução em background
-    IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de númeto de tentativas)
+    IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de número de tentativas)
 
     Returns:
         bool: True se executado com sucesso

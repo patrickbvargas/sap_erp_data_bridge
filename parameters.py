@@ -5,7 +5,7 @@ import utils
 
 IW67Config = SapImportConfig(
     'IW67',
-    '/DROF_BD_ACC',
+    '/SAP_DATA_BRIDGE',
     [
         FieldConfig('NOTA', ['Nota'], utils.format_integer),
         FieldConfig('MEDIDA', ['CóMd'], utils.format_integer),

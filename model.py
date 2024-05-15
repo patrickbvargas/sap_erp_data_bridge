@@ -167,7 +167,7 @@ class UpdateData(SapImportConfig):
     def __consult_sap_data(self, sessionNumber: int, arrParam: list):
         """     
         Este método realiza a consulta de dados no SAP conforme os parâmetros informados, na tela SAP indicada
-        IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de númeto de tentativas)
+        IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de número de tentativas)
 
         Args:
             sessionNumber (int): número da sessão SAP (tela) para criação da conexão
@@ -185,8 +185,7 @@ class UpdateData(SapImportConfig):
 
                 start = time.time()
                 session.StartTransaction(self.sapTransaction)
-                if self.name != 'ZIM151':
-                    sap.set_user_variant(session, self.sapVariant)
+                sap.set_user_variant(session, self.sapVariant)
                 self._initialize_sap_transaction(session, arrParam)
 
                 if (sap.create_background_job(session, self.name)):
@@ -209,7 +208,7 @@ class UpdateData(SapImportConfig):
         """      
         Este método realiza a importação dos dados a partir de arquivos .txt resultantes da execução em background (spool). 
         ATENÇÃO: arquivos .txt devem estar exportados no diretório [env.DIR_SPOOL_DATA] e no nome do arquivo deve conter (em qualquer posição) o valor da variável "name".   
-        IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de númeto de tentativas)
+        IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de número de tentativas)
 
         Returns:
             bool: True se executado com sucesso
@@ -244,7 +243,7 @@ class UpdateData(SapImportConfig):
     def export_file_data(self):
         """      
         Este método realiza a exportação dos dados para um arquivo .json        
-        IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de númeto de tentativas)
+        IMPORTANTE: será executado repetidamente até que haja sucesso (loop infinito - sem delimitação de número de tentativas)
         """
 
         while True:

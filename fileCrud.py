@@ -127,7 +127,7 @@ def import_spool_file_data(entries: list, fields: list):
                     tempRow = {}
                     for field in fields:
                         tempRow[field.name] = field.getValue(splitData[header[field.name]])
-                    if any(tempRow.values()):  # ? Por que não funciona all(tempRow.values()) para IW67_MEDL, ZPLM0152 e MB25
+                    if any(tempRow.values()): 
                         data.append(tempRow.copy())
 
         return data
